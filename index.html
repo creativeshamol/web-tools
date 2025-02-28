@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Toolkit Pro - All-in-One File Solutions</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --glass: rgba(15, 199, 85, 0.1);
+            --background: #0f172a;
+            --text: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: var(--glass);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(15, 221, 77, 0.719);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #08e9cb, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 8rem 1rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #7038f3, #07c1f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .tool-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #818cf8;
+        }
+
+        .category-section {
+            margin: 4rem 0;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            position: relative;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-card {
+                min-height: auto;
+            }
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content container">
+            <div class="logo">All Tools Pro</div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#features" class="nav-link">Features</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Your Files with Ease</h1>
+            <p>All-in-one solution for image, PDF, and document processing</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Image Tools Section -->
+        <section class="category-section">
+            <div class="category-header">
+                <i class='bx bx-image-alt category-icon'></i>
+                <h2 class="category-title">Image Tools</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class='bx bx-compress tool-icon'></i>
+                    <h3>Image Compressor</h3>
+                    <p>Reduce image size without losing quality</p>
+                </div>
+                <div class="tool-card">
+                    <i class='bx bx-resize tool-icon'></i>
+                    <h3>Resize Images</h3>
+                    <p>Adjust dimensions and aspect ratio</p>
+                </div>
+                <div class="tool-card">
+                    <i class='bx bx-convert tool-icon'></i>
+                    <h3>Format Converter</h3>
+                    <p>Convert between JPG, PNG, WEBP</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Tools Section -->
+        <section class="category-section">
+            <div class="category-header">
+                <i class='bx bx-file-blank category-icon'></i>
+                <h2 class="category-title">PDF Tools</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class='bx bx-merge tool-icon'></i>
+                    <h3>PDF Merge</h3>
+                    <p>Combine multiple PDFs into one</p>
+                </div>
+                <div class="tool-card">
+                    <i class='bx bx-split tool-icon'></i>
+                    <h3>PDF Split</h3>
+                    <p>Extract pages from PDF documents</p>
+                </div>
+                <div class="tool-card">
+                    <i class='bx bx-lock-alt tool-icon'></i>
+                    <h3>PDF Protect</h3>
+                    <p>Add password protection</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <i class='bx bx-shield-quarter'></i>
+                <h3>Secure Processing</h3>
+                <p>All files processed client-side</p>
+            </div>
+            <div class="feature-card">
+                <i class='bx bx-rocket'></i>
+                <h3>Instant Results</h3>
+                <p>No waiting in queues</p>
+            </div>
+            <div class="feature-card">
+                <i class='bx bx-devices'></i>
+                <h3>Cross-Platform</h3>
+                <p>Works on all devices</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 ToolKit Pro. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
